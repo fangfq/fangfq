@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>您访问的页面不存在</title>
+    <meta http-equiv="keywords" content="404">
+    <meta http-equiv="description" content="访问的资源不存在">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+    <script type="text/javascript" src="./layui/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+    	*{
+    		margin:0;
+    		padding:0;
+    	}
+    	.main{
+    		text-align:center;
+    		height:100%;
+    		padding:100px 0;
+    	 }
+    	 .error{
+    	 	font-size:200px;
+    	 	color:#009688;
+    	 }
+    	  .error div{
+    	  	display: inline-block;
+    	  }
+    	  .splitor{
+    	  	background-color:#009688;
+    	  	width:600px;
+    	  	height:10px;
+    	  	margin:20px auto;
+    	  }
+    	  .layui-icon{
+    	  	font-size:280px;
+    	  	color: #393D49;
+    	  }
+    	  .info{
+    	  	font-color: #393D49;
+    	  }
+    </style>
+  </head>
+  <body>
+  	<div class= "main">
+  		<div class= "error">
+	  		<div class="layui-anim layui-anim-loop layui-anim-">4</div>
+	  		<div class="layui-anim layui-anim-loop layui-anim-rotate ">0</div>
+	  		<div class="layui-anim layui-anim-loop layui-anim-">4</div>
+  		 </div>
+  		<hr class="splitor">
+  		<h2 style="color:#009688">SORRY,你访问的页面不存在</h2>
+  	</div>
+  	<script type="text/javascript" src= "/layui/layui.js"></script>
+  	<script>
+  		var browser_width = $(document.body).width();
+  		$("div.main").css("width",browser_width);
+  		$(window).resize(function() { 
+  		  browser_width = $(document.body).width(); 
+  		  $("div.main").css("width",browser_width); 
+  		  }); 
+  	</script>
+  </body>
+</html>

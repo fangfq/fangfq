@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="net.jqsoft.ssm.dao.UserMapper"> 
+
+	<resultMap type="user" id="myuser">
+		<result column = "HOST" property ="hostString"/>
+		<result column = "USER" property = "nameString"/>
+		<result column = "password" property = "password"/>
+		<association property="">
+			
+		</association>
+	</resultMap>
+	<select id="select" resultType="user">
+		select user as nameString,host as hostString,password  from user
+	</select>
+	
+	<select id="find" parameterType="String" resultType="user">
+		select user as nameString,host as hostString,password  from user where host = #{host}
+	</select>
+	
+	<select id="findLike" parameterType="String" resultType="user">
+		select user as nameString,host as hostString,password  from user where host like '%${value}%'
+	</select>
+	
+	<select id="get" parameterType="Map" resultMap="myuser">
+		select user,host ,update_priv  from user
+		<where>
+			<if test="host!=null and host!= ''">
+				and host = #{host}
+			</if>
+			<if test = "user!=null and user!='' ">
+				 and user = #{user}
+			</if>
+		</where>			
+	</select>
+</mapper>
